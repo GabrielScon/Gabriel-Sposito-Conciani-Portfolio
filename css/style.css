@@ -348,50 +348,51 @@ header .navbar ul li a:hover {
 
 /* Media Queries */
 
- @media (max-width:1200px) {
-     html {
-         font-size: 55%;
-     }
-     .home {
-         padding: 1rem 4rem;
-     }
- }
- @media (max-width:991px) {
-     header {
-         left: -120%;
-     }
-     #menu {
-         display: block;
-     }
-     header.toggle {
-         left: 0%;
-     }
-     body {
-         padding: 0;
-     }
- }
- @media (max-width:768px) {
-     html {
-         font-size: 50%;
-     }
- }
-@media (max-width:400px) {
+ @media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+    .home {
+        padding: 1rem 4rem;
+    }
+}
+
+@media (max-width: 991px) {
     header {
-        width: 100vw;
+        left: -100%; /* Alteração para remover o menu do lado esquerdo da tela */
+        transition: left 0.3s ease; /* Adicionando uma transição para melhorar a experiência do usuário */
+    }
+    #menu {
+        display: block;
+    }
+    header.toggle {
+        left: 0%;
+    }
+    body {
+        padding-left: 0; /* Alteração para corrigir o deslocamento do corpo da página quando o menu é exibido */
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media (max-width: 400px) {
+    header {
+        width: 100%; /* Alteração para fazer com que o cabeçalho ocupe toda a largura da tela */
     }
     .heading {
-        margin: 0 3rem;
+        margin: 0 2rem; /* Alteração para diminuir a margem do título em telas menores */
     }
-    .about .row .counter .box {
-        width: 100%;
-    }
-    .education .box-container .box {
-        width: 100%;
-    }
+    .about .row .counter .box,
+    .education .box-container .box,
     .portfolio .box-container .box {
-        width: 100%;
+        width: calc(100% - 4rem); /* Alteração para ajustar a largura dos elementos para compensar a margem */
     }
     .contact .row form {
         margin: 3rem 0;
     }
+}
 }
